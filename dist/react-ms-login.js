@@ -114,11 +114,12 @@ var ReactLoginMS = function (_React$Component) {
         _this.state = {
             clientId: _this.props.clientId,
             redirectUri: _this.props.redirectUri,
+            tenantUri: _this.props.tenantUri,
             scopes: _this.props.scopes || ["user.read"],
             responseType: _this.props.responseType || "token"
         };
 
-        _this.oauthUrl = "https://login.microsoftonline.com/common/oauth2/v2.0/authorize";
+        _this.oauthUrl = "https://login.microsoftonline.com/" + tenantUri + "/oauth2/v2.0/authorize";
         return _this;
     }
 
