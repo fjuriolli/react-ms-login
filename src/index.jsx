@@ -15,11 +15,12 @@ class ReactLoginMS extends React.Component {
         this.state = {
             clientId: this.props.clientId,
             redirectUri: this.props.redirectUri,
+            tenantUri: this.props.tenantUri,
             scopes: this.props.scopes || ["user.read"],
             responseType: this.props.responseType || "token"
         }
 
-        this.oauthUrl = "https://login.microsoftonline.com/common/oauth2/v2.0/authorize";
+        this.oauthUrl = `https://login.microsoftonline.com/${tenantUri}/oauth2/v2.0/authorize`;
     }
 
     getOAuthUrl() {
